@@ -102,18 +102,21 @@ export interface Database {
           id: number
           org_id: string
           cliente_id: number | null
+          numero: string
           created_at: string
         }
         Insert: {
           id?: number
           org_id: string
           cliente_id?: number | null
+          numero: string
           created_at?: string
         }
         Update: {
           id?: number
           org_id?: string
           cliente_id?: number | null
+          numero?: string
           created_at?: string
         }
       }

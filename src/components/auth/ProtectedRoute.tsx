@@ -3,6 +3,7 @@ import React from 'react'
 import { Navigate, Outlet } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext'
 import type { UserRole } from '../../lib/supabase'
+import NavBar from './NavBar'
 
 interface ProtectedRouteProps {
   requiredRoles?: UserRole[]
@@ -85,7 +86,12 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
   }
 
   // Si todo está bien, renderizar las rutas anidadas usando Outlet
-  return <Outlet />
+  return (
+    <>
+      <NavBar />
+      <Outlet />
+    </>
+  )
 }
 
 export default ProtectedRoute
